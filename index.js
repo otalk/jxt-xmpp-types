@@ -9,7 +9,7 @@ module.exports = function (JXT) {
     // ----------------------------------------------------------------
     // Shortcuts for common withDefinition calls
     // ----------------------------------------------------------------
-
+    
     JXT.withIq = function (cb) {
         this.withDefinition('iq', 'jabber:client', cb);
         this.withDefinition('iq', 'jabber:component:accept', cb);
@@ -41,6 +41,39 @@ module.exports = function (JXT) {
     JXT.withPubsubItem = function (cb) {
         this.withDefinition('item', 'http://jabber.org/protocol/pubsub', cb);
         this.withDefinition('item', 'http://jabber.org/protocol/pubsub#event', cb);
+    };
+
+
+    // ----------------------------------------------------------------
+    // Shortcuts for common getDefinition calls
+    // ----------------------------------------------------------------
+   
+    JXT.getMessage = function () {
+        return this.getDefinition('message', 'jabber:client');
+    };
+
+    JXT.getPresence = function () {
+        return this.getDefinition('presence', 'jabber:client');
+    };
+
+    JXT.getIq = function () {
+        return this.getDefinition('iq', 'jabber:client');
+    };
+
+    JXT.getStreamError = function () {
+        return this.getDefinition('error', 'http://etherx.jabber.org/streams');
+    };
+   
+    JXT.getComponentMessage = function () {
+        return this.getDefinition('message', 'jabber:component:accept');
+    };
+
+    JXT.getComponentPresence = function () {
+        return this.getDefinition('presence', 'jabber:component:accept');
+    };
+
+    JXT.getComponentIq = function () {
+        return this.getDefinition('iq', 'jabber:component:accept');
     };
 
 

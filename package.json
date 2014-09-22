@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "xmpp-jid": "^1.0.2",
-    "jxt": "^2.4.0"
+    "jxt": "^2.6.0"
   },
   "devDependencies": {
     "jshint": "^2.5.5",

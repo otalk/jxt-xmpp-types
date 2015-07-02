@@ -2,15 +2,25 @@
   "name": "jxt-xmpp-types",
   "version": "2.1.1",
   "description": "XMPP type definitions for JXT",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "author": "Lance Stout <lance@andyet.net>",
   "license": "MIT",
   "dependencies": {
-    "xmpp-jid": "^1.0.2",
-    "jxt": "^3.0.1"
+    "jxt": "^3.0.1",
+    "xmpp-constants": "^2.0.0",
+    "xmpp-jid": "^1.0.2"
   },
   "devDependencies": {
-    "jshint": "^2.5.5",
+    "babel": "^5.6.11",
+    "eslint": "^0.24.0",
+    "eslint-plugin-hapi": "^1.2.0",
     "precommit-hook": "^1.0.7"
-  }
+  },
+  "scripts": {
+    "validate": "npm ls",
+    "lint": "eslint ./src",
+    "compile": "babel -sd lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "pre-commit": [ "validate" ]
 }
